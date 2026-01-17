@@ -1,0 +1,312 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sahil | Portfolio</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<!-- ===== HACK SCREEN ===== -->
+<div id="hack-screen">
+  <pre id="hack-text"></pre>
+
+  <div id="hack-progress">
+    <div id="hack-bar"></div>
+  </div>
+
+  <button id="enterBtn">ENTER PORTFOLIO</button>
+</div>
+
+<!-- ===== BACKGROUND VIDEO ===== -->
+<video autoplay muted loop id="bg-video">
+  <source src="vid.mp4" type="video/mp4">
+</video>
+
+<!-- ===== HEADER ===== -->
+<header class="hero">
+
+  <div class="hero-text">
+    <h1>Sahil Pilaware</h1>
+    <p>Diploma Student | Beginner Developer</p>
+  </div>
+
+  <div class="anime-container">
+    <img src="anime.png" alt="Anime Character">
+  </div>
+
+</header>
+
+<!-- ===== WHATSAPP ===== -->
+<div class="whatsapp-box">
+  <a href="https://wa.me/919359798752" target="_blank" rel="noopener noreferrer">
+    <button>Chat on WhatsApp</button>
+  </a>
+</div>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+  <a href="#School-info">School-info</a>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#game">Game</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- ===== SCHOOL INFO ===== -->
+<section id="School-info">
+  <h2>School Info</h2>
+
+  <div class="edu-item">
+    <h3>Secondary School (SSC)</h3>
+    <p><strong>School Name:</strong> S.V.O. School</p>
+    <p><strong>Board:</strong> Maharashtra State Board</p>
+    <p><strong>Year of Passing:</strong> 2025</p>
+    <p><strong>Percentage:</strong> 93.20%</p>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    I am a diploma student learning programming languages like C, HTML,
+    and basic electronics. I want to become a good software engineer.
+  </p>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section id="skills">
+  <h2>Skills</h2>
+  <ul>
+    <li>C Programming</li>
+    <li>HTML & CSS</li>
+    <li>Basic Electronics</li>
+    <li>Problem Solving</li>
+  </ul>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="project">
+    <p>Various IOT Projects</p>
+    <p>Robotics Projects</p>
+  </div>
+
+  <div class="project">
+    <h3>Portfolio Website</h3>
+    <p>Basic HTML & CSS websites</p>
+  </div>
+</section>
+
+<!-- ===== GAME ===== -->
+<section id="game">
+  <h2>Mini Game – Flappy Shevduu</h2>
+
+  <div id="game-container">
+    <canvas id="gameCanvas" width="300" height="400"></canvas>
+    <p>Tap / Click / Space to Fly</p>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+  <h2>Contact Me</h2>
+
+  <p>Email: sahilpilaware@gmail.com</p>
+  <p>Phone: +91 9359798752</p>
+
+  <!-- Gmail -->
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sahilpilaware@gmail.com"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="email-btn">
+    📧 Contact Me on Gmail
+  </a>
+
+  <!-- Snapchat TEXT -->
+  <div class="snapchat-box">
+  <p>
+    
+    <a href="https://www.snapchat.com/add/sahil_pilaware"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="snapchat-link"
+       class="snapchat-btn">visit on snapchat
+      <img src="snap.jpg" width=80px height=80px
+    </a>
+  </p>
+  </div>
+
+
+
+</section>
+<div class="resume-box">
+<a href="resume.pdf" download class="resume-btn">Download Resume</a>
+
+<div class="coc-box">
+  <p>
+    🛡️ Clash of Clans:
+    <a href="https://link.clashofclans.com/?playerTag=%23GC8G999RQ"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="coc-link">
+       View My Profile 
+    </a>
+  </p>
+</div>
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p>© 2026 Sahil Pilaware</p>
+</footer>
+
+<!-- ===== GAME SCRIPT ===== -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const canvas = document.getElementById("gameCanvas");
+  const ctx = canvas.getContext("2d");
+
+  const birdImg = new Image();
+  birdImg.src = "bird.png";
+
+  const gravity = 0.6;
+  const lift = -10;
+  const pipeWidth = 40;
+  const pipeGap = 190;
+
+  let birdY, birdVelocity;
+  let pipeX, pipeTop;
+  let score, started, gameOver;
+
+  function resetGame() {
+    birdY = 200;
+    birdVelocity = 0;
+    pipeX = canvas.width;
+    pipeTop = Math.random() * 150 + 50;
+    score = 0;
+    started = false;
+    gameOver = false;
+  }
+
+  function drawBird() {
+    ctx.drawImage(birdImg, 55, birdY - 12, 30, 24);
+  }
+
+  function drawPipes() {
+    ctx.fillStyle = "green";
+    ctx.fillRect(pipeX, 0, pipeWidth, pipeTop);
+    ctx.fillRect(pipeX, pipeTop + pipeGap, pipeWidth, canvas.height);
+  }
+
+  function update() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    if (!started) {
+      ctx.fillStyle = "#000";
+      ctx.font = "18px Arial";
+      ctx.fillText("Tap / Click to Start", 60, 200);
+      drawBird();
+      requestAnimationFrame(update);
+      return;
+    }
+
+    if (gameOver) {
+      ctx.fillText("Game Over", 100, 180);
+      ctx.fillText("Score: " + score, 110, 210);
+      ctx.fillText("Tap to Restart", 80, 240);
+      requestAnimationFrame(update);
+      return;
+    }
+
+    birdVelocity += gravity;
+    birdY += birdVelocity;
+    pipeX -= 2;
+
+    if (pipeX < -pipeWidth) {
+      pipeX = canvas.width;
+      pipeTop = Math.random() * 150 + 50;
+      score++;
+    }
+
+    if (
+      birdY < 0 ||
+      birdY > canvas.height ||
+      (pipeX < 90 && pipeX + pipeWidth > 60 &&
+       (birdY < pipeTop || birdY > pipeTop + pipeGap))
+    ) {
+      gameOver = true;
+    }
+
+    drawBird();
+    drawPipes();
+    ctx.fillText("Score: " + score, 10, 20);
+    requestAnimationFrame(update);
+  }
+
+  function jump() {
+    if (!started) started = true;
+    else if (gameOver) { resetGame(); started = true; }
+    birdVelocity = lift;
+  }
+
+  document.addEventListener("keydown", e => {
+    if (e.code === "Space") jump();
+  });
+
+  canvas.addEventListener("click", jump);
+
+  birdImg.onload = () => {
+    resetGame();
+    update();
+  };
+});
+</script>
+
+<!-- ===== HACK SCREEN SCRIPT ===== -->
+<script>
+const hackText = document.getElementById("hack-text");
+const hackBar = document.getElementById("hack-bar");
+const enterBtn = document.getElementById("enterBtn");
+const hackScreen = document.getElementById("hack-screen");
+
+const lines = [
+  "[SYSTEM] Booting SahilOS v1.0...",
+  "[OK] Initializing modules",
+  "[OK] Loading portfolio assets",
+  "[OK] Optimizing UI",
+  "[OK] Activating creativity engine",
+  "[OK] Establishing secure session",
+  "[OK] System ready",
+  "",
+  ">> Welcome Sahil <<"
+];
+
+let index = 0;
+
+const interval = setInterval(() => {
+  hackText.textContent += lines[index] + "\n";
+  hackBar.style.width = ((index + 1) / lines.length) * 100 + "%";
+  index++;
+  if (index === lines.length) {
+    clearInterval(interval);
+    enterBtn.style.display = "block";
+  }
+}, 700);
+
+enterBtn.addEventListener("click", () => {
+  hackScreen.style.display = "none";
+});
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,344 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><style><meta name='viewport' content='width=device-width, initial-scale=1'/><style>/* ===== Global ===== */
+body {
+margin: 0;
+padding: 0;
+font-family: "Segoe UI", Arial, sans-serif;
+background: linear-gradient(135deg, #1f0036, #3a0a6a);
+background-attachment: fixed;
+color: #222;
+}
+
+/* ===== Header / Hero ===== */
+header.hero {
+min-height: 100vh;
+position: relative;
+overflow: hidden;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+color: white;
+text-align: center;
+padding: 15px;
+}
+
+/* ===== Background Video ===== */
+#bg-video {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+z-index: -1;
+}
+
+/* ===== Hero Text ===== */
+.hero-text {
+position: relative;
+z-index: 2;
+}
+
+header.hero h1 {
+font-size: 42px;
+margin-bottom: 10px;
+}
+
+header.hero p {
+font-size: 18px;
+opacity: 0.9;
+}
+
+/* ===== Anime Character ===== */
+.anime-container {
+position: absolute;
+bottom: 70px;
+right: 15px;
+width: 170px;
+z-index: 1;
+}
+
+.anime-container img {
+width: 100%;
+height: auto;
+}
+
+/* ===== WhatsApp Box ===== */
+.whatsapp-box {
+width: fit-content;
+margin: -40px auto 20px;
+padding: 20px 25px;
+border-radius: 18px;
+background: linear-gradient(135deg, #ffffff, #f3e9ff);
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.whatsapp-box a {
+display: flex;
+justify-content: center;
+}
+
+.whatsapp-box button {
+padding: 12px 30px;
+font-size: 16px;
+background: linear-gradient(135deg, #25d366, #1ebd5a);
+color: white;
+border: none;
+border-radius: 30px;
+cursor: pointer;
+font-weight: bold;
+transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.whatsapp-box button:hover {
+transform: scale(1.05);
+box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Navigation ===== */
+nav {
+background: rgba(0, 0, 0, 0.9);
+padding: 14px 0;
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+}
+
+nav a {
+color: white;
+text-decoration: none;
+margin: 8px 15px;
+font-weight: bold;
+position: relative;
+}
+
+nav a::after {
+content: "";
+position: absolute;
+width: 0;
+height: 2px;
+background: #ffd700;
+left: 0;
+bottom: -4px;
+transition: 0.3s;
+}
+
+nav a:hover::after {
+width: 100%;
+}
+
+/* ===== Sections ===== */
+section {
+max-width: 900px;
+margin: 30px auto;
+padding: 25px;
+background: linear-gradient(135deg, #ffffff, #f5edff);
+border-radius: 16px;
+box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+animation: fadeUp 0.6s ease;
+}
+
+section h2 {
+color: #3a0a6a;
+margin-bottom: 15px;
+border-left: 5px solid #7b2cff;
+padding-left: 10px;
+}
+
+/* ===== Education ===== */
+.edu-item {
+background: linear-gradient(135deg, #ececec, #ffffff);
+padding: 18px;
+border-radius: 14px;
+}
+
+/* ===== Projects ===== */
+.project {
+background: linear-gradient(135deg, #f2f2f2, #ffffff);
+padding: 18px;
+margin-bottom: 15px;
+border-left: 5px solid #7b2cff;
+border-radius: 12px;
+transition: transform 0.3s;
+}
+
+.project:hover {
+transform: translateY(-5px);
+}
+
+/* ===== Email Button ===== */
+.email-btn {
+display: inline-block;
+margin-top: 15px;
+padding: 12px 22px;
+background: linear-gradient(135deg, #d93025, #b3261e);
+color: white;
+text-decoration: none;
+font-weight: bold;
+border-radius: 30px;
+transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.email-btn:hover {
+transform: scale(1.05);
+box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Footer ===== */
+footer {
+background: rgba(0, 0, 0, 0.9);
+color: white;
+text-align: center;
+padding: 14px;
+margin-top: 40px;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeUp {
+from {
+opacity: 0;
+transform: translateY(20px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+/* ===== Mobile Responsive ===== */
+@media (max-width: 600px) {
+header.hero h1 {
+font-size: 32px;
+}
+
+section {
+margin: 18px;
+}
+
+.anime-container {
+width: 250px;
+bottom: 50px;
+}
+}
+
+/* ===== Flappy Bird Game ===== */
+#game-container {
+text-align: center;
+}
+
+#gameCanvas {
+background: linear-gradient(#70c5ce, #ffffff);
+border-radius: 12px;
+box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+#game p {
+margin-top: 10px;
+font-weight: bold;
+color: #333;
+}
+/* ===== Full Page Fake Hack Screen ===== */
+#hack-screen {
+position: fixed;
+inset: 0;
+background: black;
+color: #00ff00;
+font-family: monospace;
+padding: 20px;
+z-index: 9999;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+#hack-text {
+font-size: 14px;
+line-height: 1.6;
+white-space: pre-wrap;
+max-height: 60vh;
+overflow-y: auto;
+}
+
+#hack-progress {
+width: 100%;
+height: 10px;
+background: #222;
+margin: 15px 0;
+border-radius: 10px;
+overflow: hidden;
+}
+
+#hack-bar {
+width: 0%;
+height: 100%;
+background: #00ff00;
+transition: width 0.4s;
+}
+
+#enterBtn {
+display: none;
+align-self: center;
+padding: 12px 28px;
+background: #00ff00;
+color: black;
+border: none;
+border-radius: 25px;
+font-weight: bold;
+cursor: pointer;
+box-shadow: 0 0 15px #00ff00;
+}</style>
+
+/* Resume */
+.resume-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.resume-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 18px;
+  background: #7b2cff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+}
+.coc-box {
+  margin-top: 15px;
+  padding: 12px 16px;
+  background: #f5f0ff;
+  border-left: 4px solid #7b2cff;
+  border-radius: 8px;
+  max-width: fit-content;
+}
+
+.coc-link {
+  font-weight: 600;
+  color: black;
+  text-decoration: none;
+}
+
+.coc-link:hover {
+  text-decoration: underline;
+}
+
+
+.snapchat-link {
+display: inline-block;
+margin-top: 15px;
+padding: 12px 22px;
+background: linear-gradient(135deg, #d93025, #b3261e);
+color: white;
+text-decoration: none;
+font-weight: bold;
+border-radius: 30px;
+transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.snapchat-btn:hover {
+transform: scale(1.05);
+box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}</style>
